@@ -14,6 +14,24 @@ config/name="Convenience-Chaos"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://vjyqpb2h2hbs"
+SignalBus="*uid://cjcyla6y7b6pr"
+ObjectiveManager="*uid://nb6hrb0ws4hc"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enemy"
+3d_physics/layer_3="Enviroment"
+3d_physics/layer_4="Items"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
