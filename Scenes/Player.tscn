@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d0kp2myfti252"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qbkls"]
+
+[node name="Player" type="Node3D" unique_id=2110783787]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1481657687]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1045145095]
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="CameraMount" type="Node3D" parent="." unique_id=1039939555]
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=343165002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5891327, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1184751863]
+transform = Transform3D(1, 0, 0, 0, -0.04951217, -0.99877363, 0, 0.99877363, -0.04951217, 0.0032610893, 0.17219746, -0.28117222)
+
+[node name="NoiseEmitter" type="Area3D" parent="." unique_id=1649042806]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NoiseEmitter" unique_id=1332463504]
+shape = SubResource("SphereShape3D_qbkls")
