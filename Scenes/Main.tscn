@@ -193,7 +193,7 @@ transform = Transform3D(0.99962336, -0.016698057, -0.021779984, 0.02591974, 0.31
 
 [node name="Player" type="Node3D" parent="." unique_id=1944697236]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2102171610]
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=2102171610]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2000405587]
 navigation_mesh = SubResource("NavigationMesh_c1w88")
