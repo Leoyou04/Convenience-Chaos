@@ -1,25 +1,30 @@
-[gd_scene format=3 uid="uid://d0kp2myfti252"]
+[gd_scene format=3 uid="uid://c7hs8c3plf0rd"]
+
+[ext_resource type="Script" uid="uid://c763t5ji3vrmu" path="res://scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://bgaa217bpd75i" path="res://scripts/noise_emitter.gd" id="1_rpqav"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qbkls"]
 
-[node name="Player" type="Node3D" unique_id=2110783787]
+[node name="Player" type="CharacterBody3D" unique_id=1048298426]
+script = ExtResource("1_kyqiw")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1481657687]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1045145095]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=363727796]
 shape = SubResource("CapsuleShape3D_0rwas")
 
-[node name="CameraMount" type="Node3D" parent="." unique_id=1039939555]
+[node name="CameraMount" type="Node3D" parent="." unique_id=1138456204]
 
-[node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=343165002]
+[node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=183495084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5891327, 0)
 
-[node name="InteractRay" type="RayCast3D" parent="." unique_id=1184751863]
-transform = Transform3D(1, 0, 0, 0, -0.04951217, -0.99877363, 0, 0.99877363, -0.04951217, 0.0032610893, 0.17219746, -0.28117222)
+[node name="InteractRay" type="RayCast3D" parent="CameraMount/Camera3D" unique_id=1772735213]
+transform = Transform3D(1, 0, 0, 0, -0.04951217, -0.99877363, 0, 0.99877363, -0.04951217, 0.0032610893, -0.41693527, -0.28117222)
 
-[node name="NoiseEmitter" type="Area3D" parent="." unique_id=1649042806]
+[node name="NoiseEmitter" type="Area3D" parent="." unique_id=1780354063]
+script = ExtResource("1_rpqav")
 
-[node name="NoiseShape" type="CollisionShape3D" parent="NoiseEmitter" unique_id=1332463504]
+[node name="NoiseShape" type="CollisionShape3D" parent="NoiseEmitter" unique_id=575191206]
 shape = SubResource("SphereShape3D_qbkls")
+
+[connection signal="body_entered" from="NoiseEmitter" to="NoiseEmitter" method="_on_body_entered"]
