@@ -21,3 +21,4 @@ func start_game():
 
 func get_time_remaining() -> float:
 	return max(0.0, night_duration - night_timer)
+	

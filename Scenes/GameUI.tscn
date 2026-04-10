@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b4j1n4w3cj2bg"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=556926182]
+
+[node name="Root" type="Control" parent="." unique_id=1364329286]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectiveList" type="VBoxContainer" parent="." unique_id=29506947]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -585.0
+offset_bottom = 217.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="ObjectiveList" unique_id=482281076]
+layout_mode = 2
+text = "Objective 1"
+
+[node name="Label2" type="Label" parent="ObjectiveList" unique_id=889225628]
+layout_mode = 2
+text = "Objective 2"
+
+[node name="Label3" type="Label" parent="ObjectiveList" unique_id=11459108]
+layout_mode = 2
+text = "Objective 3"
+
+[node name="Label4" type="Label" parent="ObjectiveList" unique_id=1190385052]
+layout_mode = 2
+text = "Objective 4"
+
+[node name="Label5" type="Label" parent="ObjectiveList" unique_id=1582328733]
+layout_mode = 2
+text = "Objective 5"
+
+[node name="Label6" type="Label" parent="ObjectiveList" unique_id=1614779640]
+layout_mode = 2
+text = "Objective 6"
+
+[node name="TimerLabel" type="Label" parent="." unique_id=295744340]
+anchors_preset = -1
+anchor_right = -0.059375
+anchor_bottom = -0.037037037
+offset_right = 563.0
+offset_bottom = 207.0
+text = "TIMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hotbar" type="HBoxContainer" parent="." unique_id=1223707221]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -438.0
+offset_top = -176.0
+offset_right = 438.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Hotbar" unique_id=1039081134]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Hotbar" unique_id=1978730373]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Hotbar" unique_id=836487721]
+layout_mode = 2
