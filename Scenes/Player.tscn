@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bgaa217bpd75i" path="res://scripts/noise_emitter.gd" id="1_rpqav"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+height = 1.6713257
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qbkls"]
 
@@ -11,12 +12,13 @@
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=363727796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16433716, 0)
 shape = SubResource("CapsuleShape3D_0rwas")
 
 [node name="CameraMount" type="Node3D" parent="." unique_id=1138456204]
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=183495084]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5891327, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15340495, 0)
 
 [node name="InteractRay" type="RayCast3D" parent="CameraMount/Camera3D" unique_id=1772735213]
 transform = Transform3D(1, 0, 0, 0, -0.04951217, -0.99877363, 0, 0.99877363, -0.04951217, 0.0032610893, -0.41693527, -0.28117222)
