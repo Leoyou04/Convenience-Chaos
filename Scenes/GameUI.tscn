@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b4j1n4w3cj2bg"]
 
 [ext_resource type="Texture2D" uid="uid://dybb6it1ccb5j" path="res://icon.svg" id="1_tyage"]
-[ext_resource type="Script" uid="uid://n5rrsdaw1u4b" path="res://Scenes/noise_indicator.gd" id="2_37hul"]
+[ext_resource type="Script" uid="uid://n5rrsdaw1u4b" path="res://scripts/noise_indicator.gd" id="2_37hul"]
+[ext_resource type="Script" uid="uid://c7f2kulywtk7n" path="res://scripts/alert_icon.gd" id="3_po7eo"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=556926182]
+[node name="GameUI" type="CanvasLayer" unique_id=556926182]
 
 [node name="Root" type="Control" parent="." unique_id=1364329286]
 layout_mode = 3
@@ -104,4 +105,16 @@ grow_vertical = 0
 size_flags_vertical = 8
 texture = ExtResource("1_tyage")
 script = ExtResource("2_37hul")
+metadata/_edit_use_anchors_ = true
+
+[node name="AlertIcon" type="TextureRect" parent="." unique_id=955623492]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("1_tyage")
+script = ExtResource("3_po7eo")
 metadata/_edit_use_anchors_ = true

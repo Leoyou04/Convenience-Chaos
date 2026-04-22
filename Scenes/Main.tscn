@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c7hs8c3plf0rd" path="res://Scenes/Player.tscn" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://84y40uwq3x3c" path="res://Scenes/StoreMap.tscn" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://b4j1n4w3cj2bg" path="res://Scenes/GameUI.tscn" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://dly8agh4d7cq2" path="res://autoloads/hot_bar_manager.gd" id="3_rgh2o"]
 
 [node name="Node3D" type="Node3D" unique_id=1390644774]
 
@@ -16,3 +18,8 @@ transform = Transform3D(0.99962336, -0.016698057, -0.021779984, 0.02591974, 0.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7692537, 0)
 
 [node name="NavigationRegion3D" parent="." unique_id=334244944 instance=ExtResource("2_kln2b")]
+
+[node name="HotBarManager" type="Node" parent="." unique_id=1603276957]
+script = ExtResource("3_rgh2o")
+
+[node name="GameUI" parent="HotBarManager" unique_id=556926182 instance=ExtResource("3_kln2b")]

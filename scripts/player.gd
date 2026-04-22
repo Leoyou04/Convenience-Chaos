@@ -16,6 +16,7 @@ var is_prone = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("player")
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -23,7 +24,23 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			HotBarManager.cycle_slot(1)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			HotBarManager.cycle_slot(-1)
+
 func _physics_process(_delta):
+	if Input.is_action_just_pressed("slot_1"):
+		HotBarManager.set_active_slot(0)
+	if Input.is_action_just_pressed("slot_2"):
+		HotBarManager.set_active_slot(1)
+	if Input.is_action_just_pressed("slot_3"):
+		HotBarManager.set_active_slot(2)
+	if Input.is_action_just_pressed("drop_item"):
+		HotBarManager.drop_active_item(self)
+
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (camera_mount.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
