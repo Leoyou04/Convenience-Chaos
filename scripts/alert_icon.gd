@@ -1,4 +1,4 @@
-extends Label3D
+extends TextureRect
 
 var alert_timer: float = 0.0
 var alert_duration: float = 2.0  # Duration to show alert (seconds)
@@ -7,10 +7,6 @@ var is_alerted: bool = false
 func _ready() -> void:
 	# Hide by default
 	visible = false
-	text = "!"
-	
-	# Optional: customize text appearance
-	font_size = 40
 
 func _process(delta: float) -> void:
 	if is_alerted:

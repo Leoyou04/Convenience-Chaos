@@ -5,17 +5,32 @@
 [ext_resource type="PackedScene" uid="uid://b4j1n4w3cj2bg" path="res://Scenes/GameUI.tscn" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://dly8agh4d7cq2" path="res://autoloads/hot_bar_manager.gd" id="3_rgh2o"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgh2o"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_pbw6q"]
+sky_material = SubResource("ProceduralSkyMaterial_rgh2o")
+
+[sub_resource type="Environment" id="Environment_v1gob"]
+background_mode = 2
+sky = SubResource("Sky_pbw6q")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Node3D" type="Node3D" unique_id=1390644774]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1009331926]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2087525321]
+environment = SubResource("Environment_v1gob")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1606848215]
-transform = Transform3D(0.99962336, -0.016698057, -0.021779984, 0.02591974, 0.31358683, 0.94920576, -0.0090199765, -0.9494127, 0.3139015, -1.8399343, 8.718534, 4.5406437)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=420769032]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=2102171610]
 
 [node name="Player" parent="." unique_id=1048298426 instance=ExtResource("1_idj7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7692537, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7264452, 0)
 
 [node name="NavigationRegion3D" parent="." unique_id=334244944 instance=ExtResource("2_kln2b")]
 

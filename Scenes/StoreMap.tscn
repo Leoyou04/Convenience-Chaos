@@ -506,6 +506,3 @@ mesh = SubResource("BoxMesh_vvnwx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoreMap/Dumpster2/StaticBody3D" unique_id=2006059185]
 shape = SubResource("ConcavePolygonShape3D_yr7xl")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=147384463]
-transform = Transform3D(0.99962336, -0.016698057, -0.021779984, 0.02591974, 0.31358683, 0.94920576, -0.0090199765, -0.9494127, 0.3139015, 0.39716387, 3.586012, 4.5406437)

@@ -1,29 +1,34 @@
-extends Sprite3D
+extends TextureRect
 
-var player: Node3D
+var player: CharacterBody3D
 var hide_timer: float = 0.0
-var hide_delay: float = 0.3  # Time to hide sprite after player stops moving
+var hide_delay: float = 0.3  # Time to hide indicator after player stops moving
 
 func _ready() -> void:
-	# Hide the sprite by default
+	# Hide by default until movement is detected.
 	visible = false
-	
-	# Get reference to the player (parent node)
-	player = get_parent()
+	_resolve_player()
 
 func _process(delta: float) -> void:
-	if not player:
-		return
-	
-	# Check if player is moving (has velocity)
-	var player_velocity = player.velocity if player.has_meta("velocity") or player is CharacterBody3D else Vector3.ZERO
-	
-	if player_velocity.length() > 0.1:
-		# Player is moving, show the sprite
+	if not is_instance_valid(player):
+		_resolve_player()
+		if not player:
+			return
+
+	# Ignore vertical speed so jumping/falling doesn't trigger the UI indicator.
+	var planar_speed := Vector2(player.velocity.x, player.velocity.z).length()
+
+	if planar_speed > 0.1:
 		visible = true
 		hide_timer = 0.0
 	else:
-		# Player is not moving, start countdown to hide
 		hide_timer += delta
 		if hide_timer >= hide_delay:
 			visible = false
+
+func _resolve_player() -> void:
+	var players := get_tree().get_nodes_in_group("player")
+	if players.is_empty():
+		return
+	if players[0] is CharacterBody3D:
+		player = players[0]
